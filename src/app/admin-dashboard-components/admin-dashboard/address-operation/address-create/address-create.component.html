@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 mt-5">
+    <h5 class="text-center">Adres Ekle</h5>
+    <form [formGroup]="addressCreateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="address" class="form-control" placeholder="Adres" type="text" formControlName="address">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="street" class="form-control" placeholder="Sokak" type="text" formControlName="street">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="neighborhood" class="form-control" placeholder="Mahalle" type="text" formControlName="neighborhood">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="district" class="form-control" placeholder="İlçe" type="text" formControlName="district">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="city" class="form-control" placeholder="İl" type="text" formControlName="city">
+        </div>
+        <div class="form-group text-end">
+            <button type="submit" class="btn btn-warning btn-block mt-3 ">Kaydet</button>
+        </div>
+    </form>
+    
+</div>
+</div>
+</div>

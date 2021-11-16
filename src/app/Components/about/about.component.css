@@ -1,0 +1,15 @@
+.generic{
+    padding: 100px;
+}
+
+@media (max-width: 440px) { 
+    #information{
+        font-size: 14px;
+
+    }
+    .generic{
+        padding: 20px;
+    }
+   
+
+ }

@@ -1,0 +1,52 @@
+<nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-primary py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">PoolManagement</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="toHome()"  routerLink="/home" routerLinkActive="active">Ana Sayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  (click)="toAbout()"  routerLink="/about" routerLinkActive="active">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toPortfolio()"  routerLink="/portfolio" routerLinkActive="active">Ref</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toBlog()"  routerLink="/blog" routerLinkActive="active">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toDivider()"  routerLink="/divider" routerLinkActive="active">Havuz Sorgula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toApproach()"  routerLink="/dapproach" routerLinkActive="active">Prensiplerimiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toTeam()"  routerLink="/team" routerLinkActive="active">Çalışanlarımız</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toContact()"  routerLink="/contact" routerLinkActive="active">İletişim</a>
+          </li>
+          <li class="nav-item text-nowrap">
+            <a *ngIf="isLoggedIn()==true"  class="nav-link" (click)="rotuerDashboard()" routerLink="/login" routerLinkActive="active">Yönetim Paneli</a>
+            
+          </li>
+          <li class="nav-item text-nowrap">
+            <a *ngIf="isLoggedIn()==false"  class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+            
+          </li>
+          <li class="nav-item text-nowrap">
+            <a *ngIf="isLoggedIn()==true"  class="nav-link"  (click)="logout()" routerLink="">Logout</a>
+            
+          </li>
+
+        
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>

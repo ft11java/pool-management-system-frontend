@@ -1,0 +1,216 @@
+<div class="container-fluid mt-3" id="generic">
+    <div class="card border-primary shadow bg-body rounded" id="poolCreateCard">
+        <div class="card-header  bg-primary border-primary">
+            <div class="row g-0">
+                <div class="col-8 d-flex align-items-center">
+                    <h5 class="text-white fs-6">Havuz Ekle </h5>
+                </div>
+                <div class="col-4 text-end p-0 m-0 ">
+                    <span> <i class="bi bi-plus-circle" style="color: rgb(255, 255, 255);" id="poolIcon"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div>
+                <h6 class="text-success">Genel Bilgileri Giriniz</h6>
+            </div>
+            <form [formGroup]="poolUpdateForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input name="userName" class="form-control text-success" placeholder="Havuz Numarası"
+                                type="text" formControlName="poolNumber" id="poolNumber">
+                            <label for="poolNumber" class="text-primary fst-italic">Havuz Numarası</label>
+                            <div style="height: 20px;">
+                            <div *ngIf="poolUpdateForm.controls.poolNumber.errors && (poolUpdateForm.controls.poolNumber.dirty || poolUpdateForm.controls.poolNumber.touched)">
+                                <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.poolNumber.errors.required">* Havuz numarası giriniz</span>
+                                <span class="text-danger fst-italic ms-2 align-top"  id="validation" *ngIf="poolUpdateForm.controls.poolNumber.errors.minlength">** Havuz numarası en az 6 karakter olmalı</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input name="email" class="form-control text-success" placeholder="Havuz Adı" type="text"
+                                formControlName="poolName" id="poolName">
+                            <label for="poolName" class="text-primary fst-italic">Havuz Adı</label>
+                            <div style="height: 20px;">
+                            <div *ngIf="poolUpdateForm.controls.poolName.errors && (poolUpdateForm.controls.poolName.dirty || poolUpdateForm.controls.poolName.touched)">
+                                <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.poolName.errors.required">* Havuz adı giriniz</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <input name="password" class="form-control text-success" placeholder="Havuz Kapasitesi"
+                                type="text" formControlName="capacity" id="capacity">
+                            <label for="capacity" class="text-primary fst-italic">Havuz Kapasitesi</label>
+                            <div style="height: 20px;">
+                            <div *ngIf="poolUpdateForm.controls.capacity.errors && (poolUpdateForm.controls.capacity.dirty || poolUpdateForm.controls.capacity.touched)">
+                                <span class="text-danger fst-italic ms-2  align-top" id="validation" *ngIf="poolUpdateForm.controls.capacity.errors.required">* Havuz kapasitesini giriniz</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <input name="name" class="form-control text-success" placeholder="Kayıt Tarihi" type="text" [ngModel]="resigtrationDate|date:'Y-M-d'"
+                                formControlName="resigtrationDate" id="resigtrationDate">
+                            <label for="resigtrationDate" class="text-primary fst-italic">Kayıt Tarihi (Format: Yıl-Ay-Gün)</label>
+                            <div style="height: 20px;">
+                                <div *ngIf="poolUpdateForm.controls.resigtrationDate.errors && (poolUpdateForm.controls.resigtrationDate.dirty || poolUpdateForm.controls.resigtrationDate.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.resigtrationDate.errors.required">* Havuz kayıt tarihini giriniz</span>
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.resigtrationDate.errors.pattern">** Yıl-Ay-Gün formatında tarih giriniz </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <select class="form-select text-success" id="poolUsageType"
+                                aria-label="Floating label select example" formControlName="poolUsageTypeId">
+                                <option selected disabled class="text-success fst-italic fw-bold">Havuz Kullanım Tipini Seçiniz
+                                </option>
+                                <option *ngFor="let poolUsageType of poolUsageTypes" value={{poolUsageType.id}}>
+                                    {{poolUsageType.poolUsageTypeName}}</option>
+                            </select>
+                            <label for="poolUsageType" class="text-primary fst-italic">Havuzun Kullanım Tipini
+                                Seçiniz</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="poolUpdateForm.controls.poolUsageTypeId.errors && (poolUpdateForm.controls.poolUsageTypeId.dirty || poolUpdateForm.controls.poolUsageTypeId.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.poolUsageTypeId.errors.required">* Havuz kullanım tipini seçiniz</span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <select class="form-select text-success" id="poolType"
+                                aria-label="Floating label select example" formControlName="poolTypeId">
+                                <option selected disabled class="text-success fst-italic fw-bold">Havuz Tipini Seçiniz</option>
+                                <option *ngFor="let poolType of poolTypes" value={{poolType.id}}>
+                                    {{poolType.poolTypeName}}</option>
+                            </select>
+                            <label for="poolType" class="text-primary fst-italic">Havuzun Tipini Seçiniz</label>
+                            <div style="height: 20px;">
+                                <div *ngIf="poolUpdateForm.controls.poolTypeId.errors && (poolUpdateForm.controls.poolTypeId.dirty || poolUpdateForm.controls.poolTypeId.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.poolTypeId.errors.required">* Havuz tipini seçiniz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <select class="form-select text-success" id="poolUser"
+                                aria-label="Floating label select example" formControlName="usersId">
+                                <option selected disabled class="text-success fst-italic fw-bold">Bir Kullanıcı Seçiniz</option>
+                                <option *ngFor="let user of users" value={{user.id}} class="text-success fst-italic">
+                                    {{user.userName}}->{{user.name}} {{user.lastName}}</option>
+                            </select>
+                            <label for="poolUser" class="text-primary fst-italic">Havuzdan Sorumlu Kullanıcıyı
+                                Seçiniz</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="poolUpdateForm.controls.usersId.errors && (poolUpdateForm.controls.usersId.dirty || poolUpdateForm.controls.usersId.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="poolUpdateForm.controls.usersId.errors.required">* Havuzdan sorumlu kullanıcıyı seçiniz</span>
+                                    </div>
+                                </div>
+                                
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="text-success mt-3">Adres Bilgilerini Giriniz</h6>
+                </div>
+                <div formGroupName="address">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="name" class="form-control text-success" placeholder="Adres" type="text"
+                                    formControlName="address" id="address">
+                                <label for="address" class="text-primary fst-italic">Adres</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="f.controls.address.errors && (f.controls.address.dirty ||f.controls.address.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="f.controls.address.errors.required">* Adres giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="name" class="form-control text-success" placeholder="Cadde/Sokak"
+                                    type="text" formControlName="street" id="street">
+                                <label for="street" class="text-primary fst-italic">Cadde/Sokak</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="f.controls.street.errors && (f.controls.street.dirty ||f.controls.street.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="f.controls.street.errors.required">* Cadde/Sokak giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="name" class="form-control text-success" placeholder="Mahalle" type="text"
+                                    formControlName="neighborhood" id="neighborhood">
+                                <label for="neighborhood" class="text-primary fst-italic">Mahalle</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="f.controls.neighborhood.errors && (f.controls.neighborhood.dirty ||f.controls.neighborhood.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="f.controls.neighborhood.errors.required">* Mahalle giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="name" class="form-control text-success" placeholder="İlçe" type="text"
+                                    formControlName="district" id="district">
+                                <label for="district" class="text-primary fst-italic">İlçe</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="f.controls.district.errors && (f.controls.district.dirty ||f.controls.district.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="f.controls.district.errors.required">* İlçe giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="name" class="form-control text-success" placeholder="İl" type="text"
+                                    formControlName="city" id="city">
+                                <label for="city" class="text-primary fst-italic">İl</label>
+                                <div style="height: 20px;">
+                                    <div *ngIf="f.controls.city.errors && (f.controls.city.dirty ||f.controls.city.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="f.controls.city.errors.required">* İl giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-0 mt-2">
+                    <div class="col-6 col-sm-3">
+                        <div class="d-grid gap-2">
+                            <button type="button" (click)="reset()" class="btn btn-danger btn-block " id="resettButton">Formu Temizle</button>
+                        </div>
+                    </div>
+                    <div class="col-2 col-sm-6">      
+                    </div>
+                    <div class="col-4 col-sm-3">
+                        <div class="form-group d-grid gap-2">
+                            <button type="submit" class="btn btn-warning btn-block fw-bold" [disabled]="!poolUpdateForm.valid">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

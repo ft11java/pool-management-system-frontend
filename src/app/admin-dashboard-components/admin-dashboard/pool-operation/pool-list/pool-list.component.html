@@ -1,0 +1,54 @@
+<div class="container-fluid mt-4" id="generic">
+    <div class="row g-0">
+        <div class="col-12">
+            <div class="card border-primary shadow  mb-3 bg-body rounded" id="poolListCard">
+                <div class="card-header  bg-primary border-primary">
+                    <div class="row g-0">
+                        <div class="col-5 col-sm-8 d-flex align-items-center">
+                            <span> <i class="bi bi-card-list" style="color:  rgb(255, 255, 255);"
+                                    id="poolIcon"></i></span>
+                            <span class="text-white fw-bold">&nbsp;Havuz Listesi </span>
+                        </div>
+                        <div class="col-1 col-sm-1 text-end">
+                            <span> <i class="bi bi-search m-1" style="color:  rgb(255, 255, 255);" id="poolIcon"></i></span>
+                        </div>
+                        <div class="col-6 col-sm-3 ">
+                            <input id="search" class="form-control form-control-sm text-danger mt-1" #searchText
+                                (keyup)="search(searchText.value)" type="text" placeholder="Havuz Ara (Numarası, Adı)"
+                                aria-label="default input example">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="poolCardBody">
+                    <div class="row g-0">
+                        <div class="col">
+
+                            <table class="table table-striped">
+                                <thead class="text-danger">
+                                    <th>Numarası</th>
+                                    <th>Adı</th>
+                                    <th>Kapasitesi (Ton)</th>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-primary" id="table" *ngFor="let pool of filterPools">
+                                        <td>{{pool.poolNumber}}</td>
+                                        <td>{{pool.poolName}}</td>
+                                        <td>{{pool.capacity}}</td>
+                                        <td>
+                                            <div class="container-fluid text-end ">
+                                                <button (click)="poolDetails(pool.id)" class="btn btn-success btn-sm"
+                                                    id="button">
+                                                    Göster
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

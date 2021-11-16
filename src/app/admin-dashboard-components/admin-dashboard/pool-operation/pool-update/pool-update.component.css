@@ -1,0 +1,34 @@
+#poolIcon{
+    font-size: 2rem;
+}
+#validation{
+    font-size: 12px;
+}
+#validation1{
+  font-size: 13px;
+}
+
+
+@media (max-width: 440px) {
+  #poolCreateCard {
+    font-size: 12px;
+  }
+
+  #generic {
+    padding: 5px;
+  }
+
+  #poolIcon{
+      font-size: 1.5rem;
+  }
+
+  #validation{
+    font-size: 10px;
+}
+#validation1{
+  font-size: 11px;
+}
+
+
+
+}

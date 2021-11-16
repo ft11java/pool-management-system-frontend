@@ -1,0 +1,38 @@
+#poolIcon{
+    font-size: 1.5rem;
+}
+#poolListCard {
+  font-size: 14px;
+}
+#poolDeleteCard {
+    padding: 5px;
+  }
+  #button{
+    min-width: 100px;
+}
+#search:focus{
+  box-shadow: 0 0 5px rgb(245, 80, 80);
+  border: 1px solid rgb(253, 116, 116);
+}
+
+#poolCardBody{
+  max-height: 550px ;
+   overflow-y: scroll;
+ }
+@media (max-width: 440px) {
+  #poolDeleteCard {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  #poolIcon{
+      font-size: 1.3rem;
+  }
+  #button{
+      font-size: 8px;
+      min-width: 60px;
+  }
+  #search{
+    font-size: 11px;
+  }
+}

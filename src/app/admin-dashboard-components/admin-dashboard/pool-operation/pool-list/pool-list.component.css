@@ -1,0 +1,52 @@
+#poolIcon{
+    font-size: 1.5rem;
+}
+
+#button{
+  min-width: 100px;
+}
+
+#poolListCard {
+  font-size: 14px;
+}
+
+#poolCardBody{
+ max-height: 550px ;
+  overflow-y: scroll;
+}
+#search:focus{
+  box-shadow: 0 0 5px rgb(245, 80, 80);
+  border: 1px solid rgb(253, 116, 116);
+}
+
+@media (max-width: 440px) {
+  #poolListCard {
+    font-size: 10px;
+  }
+
+  #generic {
+    padding: auto;
+  }
+
+  #button{
+      padding:2px;
+      max-height: 25px;
+      max-width: 50px;
+      font-size: 12px;
+  }
+
+
+  #poolIcon{
+      font-size: 1.3rem;
+  }
+
+  #button{
+    min-width: 40px;
+      font-size: 8px;
+  }
+  
+  #search{
+    font-size: 11px;
+  }
+
+}

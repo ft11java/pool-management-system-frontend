@@ -1,0 +1,131 @@
+<section id="divider" class="generic dark-bg mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <form [formGroup]="poolNumberFormGroup" (ngSubmit)="onSubmit()">
+          <div class="input-group input-group-lg">
+            <input name="poolNumber" type="text" class="
+                form-control
+                rounded-0
+                border-primary
+                text-white
+                bg-transparent
+              " placeholder="Pool Number" formControlName="poolNumber" />
+            <span class="input-group-btn input-group-lg">
+              <input type="submit" class="btn btn-primary rounded-0 text-white border-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" value="Search Pool" />
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title text-white" id="staticBackdropLabel">{{pool.poolNumber}} Numaralı Havuzun Bilgileri
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-0">
+            <div class="col">
+
+              <div class="card border-primary shadow  mb-3 bg-body rounded" id="poolCard">
+
+                <div class="card-body">
+                  <div class="row g-1">
+                    <div class="col-7 col-sm-6">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-primary text-start">Numarası :</li>
+                        <li class="list-group-item text-primary text-start">Adı :</li>
+                        <li class="list-group-item text-primary text-start">Kapasitesi :</li>
+                        <li class="list-group-item text-primary text-start">Tipi :</li>
+                        <li class="list-group-item text-primary text-start">Kullanım Şekli :</li>
+
+                      </ul>
+                    </div>
+                    <div class="col-5 col-sm-6">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item text-danger">{{pool.poolNumber}}</li>
+                        <li class="list-group-item text-danger">{{pool.poolName}}</li>
+                        <li class="list-group-item text-danger">{{pool.capacity}} Ton</li>
+                        <li class="list-group-item text-danger">{{pool?.poolType?.poolTypeName}}</li>
+                        <li class="list-group-item text-danger">{{pool?.poolUsageType?.poolUsageTypeName}}</li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card border-primary mt-3 shadow  mb-3 bg-body rounded">
+                <div class="card-header bg-primary border-primary">
+                  <h5 class="text-white  fs-6">Havuzun Bakım Bilgileri</h5>
+                </div>
+
+                <div class="card-body">
+                  <div class="row g-0">
+                    <ng-template ngFor let-maintenancePlan [ngForOf]="pool.maintenancePlanViewAllDTO">
+                      <div class="col-12">
+
+                        <div class="card border-success mt-1 mb-2 shadow  bg-body rounded" id="maintenancePlanCard">
+                          <div class="card-header border-success bg-primary">
+                            <h5 class="text-white fs-6">Bakım Tarihi: {{maintenancePlan.operationMade}}</h5>
+                          </div>
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col">
+                                <h4 class="fs-6 text-primary text-start">Bakımda Yapılan İşlemler</h4>
+                              </div>
+                            </div>
+                            <div class="row g-1">
+                              <ng-template ngFor let-maintenanceOperation
+                                [ngForOf]="maintenancePlan.maintenanceOperationViewAllDTO">
+                                <div class="col-12 col-lg-6">
+
+                                  <div class="card border-info mt-2 shadow  bg-body rounded"
+                                    id="maintenanceOperationCard">
+                                    <div class="card-body">
+                                      <div class="row g-1">
+                                        <div class="col-7">
+                                          <ul class="list-group list-group-flush">
+                                            <li class="list-group-item text-primary text-start">İşlem Adı :</li>
+                                            <li class="list-group-item text-primary text-start">Tekrarlanma Aralığı :
+                                            </li>
+                                          </ul>
+                                        </div>
+                                        <div class="col-5">
+                                          <ul class="list-group list-group-flush">
+                                            <li class="list-group-item text-danger">
+                                              {{maintenanceOperation.operationName}}</li>
+                                            <li class="list-group-item text-danger">
+                                              {{maintenanceOperation.whatFrequency}}</li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </ng-template>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

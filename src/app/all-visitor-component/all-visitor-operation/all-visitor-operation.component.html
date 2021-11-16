@@ -1,0 +1,22 @@
+<section id="divider" class="generic dark-bg mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <form [formGroup]="poolNumberFormGroup" (ngSubmit)="onSubmit()">
+            <div class="input-group input-group-lg">
+              <input name="poolNumber" type="text" class="
+                  form-control
+                  rounded-0
+                  border-primary
+                  text-white
+                  bg-transparent
+                " placeholder="Pool Number" formControlName="poolNumber" />
+              <span class="input-group-btn input-group-lg">
+                <input type="submit" class="btn btn-primary rounded-0 text-white border-primary" value="Search Pool" />
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

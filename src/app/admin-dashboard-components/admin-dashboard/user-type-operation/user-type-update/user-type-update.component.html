@@ -1,0 +1,55 @@
+<div class="container-fluid mt-3" id="generic">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 ">
+    <div class="card border-primary shadow bg-body rounded" id="poolCreateCard">
+        <div class="card-header  bg-primary border-primary">
+            <div class="row g-0">
+                <div class="col-8 d-flex align-items-center">
+                    <span class="text-white">Kullanıcı Tipi Ekle </span>
+                </div>
+                <div class="col-4 text-end p-0 m-0 ">
+                    <span> <i class="bi bi-plus-circle" style="color: rgb(255, 255, 255);" id="poolIcon"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div>
+                <span class="text-success">Kullanıcı Tipi Bilgilerini Giriniz</span>
+            </div>
+            <form [formGroup]="userTypeCreateForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input name="userName" class="form-control text-success" placeholder="Kullanıcı Tipi Adı" [(ngModel)]="userType.userTitleName"
+                                type="text" formControlName="userTitleName" id="poolNumber">
+                            <label for="poolNumber" class="text-primary fst-italic">Kullanıcı Tipi</label>
+                            <div style="height: 20px;">
+                            <div *ngIf="userTypeCreateForm.controls.userTitleName.errors && (userTypeCreateForm.controls.userTitleName.dirty || userTypeCreateForm.controls.userTitleName.touched)">
+                                <span class="text-danger fst-italic ms-2 align-top" id="validation" *ngIf="userTypeCreateForm.controls.userTitleName.errors.required">* Kullanıcı Tipi giriniz</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            
+                        </div>
+                       <div class="col-4"></div>
+                        <div class="col-4">
+                            <div class="form-group d-grid gap-2">
+                                <button type="submit" class="btn btn-warning btn-block fw-bold" id="Button" [disabled]="!userTypeCreateForm.valid">Güncelle</button>
+                            </div>
+                        </div>
+                    </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,18 @@
+<div class="container">
+    <h3 class="text-center mt-3 text-info">Havuz Tipi Güncelleme</h3>
+    <table class="table table-striped mt-3">
+        <thead>
+            <th>Havuz Tipi Adı</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let poolType of poolTypes">
+                <td>{{poolType.poolTypeName}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="poolTypeUpdate(poolType.id)" class="btn btn-warning" style="margin-left: 10px;">Güncelle</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

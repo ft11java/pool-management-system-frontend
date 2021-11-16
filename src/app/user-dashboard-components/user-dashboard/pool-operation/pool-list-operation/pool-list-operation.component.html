@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="text-center mt-5">Havuz Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Havuz Numarası</th>            
+            <th>Havuz Adı</th>
+            <th>Havuz Kapasitesi</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pool of pools">
+                <td>{{pool.poolNumber}}</td>
+                <td>{{pool.poolName}}</td>
+                <td>{{pool.capacity}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="poolDetails(pool.poolNumber)" class="btn btn-success" style="margin-left: 10px;">Göster</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,127 @@
+<div class="flex-shrink-0  bg-light shadow rounded-bottom" >
+    <a routerLink="start" routerLinkActive="active" class="d-flex align-items-center pt-2 pb-2 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold text-danger">Admin İşlemleri</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pool-collapse" aria-expanded="false">
+          Havuz İşlemleri
+        </button>
+        <div class="collapse" id="pool-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="pool-list" routerLinkActive="active" class="link-dark rounded ">Havuz Listele</a></li>
+            <li><a routerLink="pool-create" routerLinkActive="active" class="link-dark rounded">Havuz Ekle</a></li>
+            <li><a routerLink="pool-update-list" routerLinkActive="active" class="link-dark rounded">Havuz Düzenle</a></li>
+            <li><a routerLink="pool-delete" routerLinkActive="active" class="link-dark rounded">Havuz Sil</a></li>
+            <li><a routerLink="pool-add-remove-user-list" routerLinkActive="active" class="link-dark rounded"> Havuza Kullanıcı Ekle-Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#user-collapse" aria-expanded="false">
+          Kullanıcı İşlemleri
+        </button>
+        <div class="collapse" id="user-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="user-list" routerLinkActive="active" class="link-dark rounded">Kullanıcı Listele</a></li>
+            <li><a routerLink="user-create" routerLinkActive="active" class="link-dark rounded">Kullanıcı Ekle</a></li>
+            <li><a routerLink="user-update-list" routerLinkActive="active" class="link-dark rounded">Kullanıcı Düzenle</a></li>
+            <li><a routerLink="user-delete" routerLinkActive="active" class="link-dark rounded">Kullanıcı Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#role-collapse" aria-expanded="false">
+          Role İşlemleri
+        </button>
+        <div class="collapse" id="role-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="role-list" routerLinkActive="active" class="link-dark rounded">Role Listele</a></li>
+            <li><a routerLink="role-create" routerLinkActive="active" class="link-dark rounded">Role Ekle</a></li>
+            <li><a routerLink="role-delete" routerLinkActive="active" class="link-dark rounded">Role Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#user-type-collapse" aria-expanded="false">
+          Kullanıcı Tipi İşlemleri
+        </button>
+        <div class="collapse" id="user-type-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="user-type-list" routerLinkActive="active" class="link-dark rounded">Kullanıcı Tipi Listele</a></li>
+            <li><a routerLink="user-type-create" routerLinkActive="active" class="link-dark rounded">Kullanıcı Tipi Ekle</a></li>
+            <li><a routerLink="user-type-update-list" routerLinkActive="active" class="link-dark rounded">Kullanıcı Tipi Düzenle</a></li>
+            <li><a routerLink="user-type-delete" routerLinkActive="active" class="link-dark rounded">Kullanıcı Tipi Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pool-type-collapse" aria-expanded="false">
+          Havuz Tipi İşlemleri
+        </button>
+        <div class="collapse" id="pool-type-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="pool-type-list" routerLinkActive="active" class="link-dark rounded">Havuz Tipi Listele</a></li>
+            <li><a routerLink="pool-type-create" routerLinkActive="active" class="link-dark rounded">Havuz Tipi Ekle</a></li>
+            <li><a routerLink="pool-type-update-list" routerLinkActive="active" class="link-dark rounded">Havuz Tipi Düzenle</a></li>
+            <li><a routerLink="pool-type-delete" routerLinkActive="active" class="link-dark rounded">Havuz Tipi Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#pool-usage-type-collapse" aria-expanded="false">
+          Havuz Kullanım Tipi İşlemleri
+        </button>
+        <div class="collapse" id="pool-usage-type-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="pool-usage-type-list" routerLinkActive="active" class="link-dark rounded">Havuz Kullanım Tipi Listele</a></li>
+            <li><a routerLink="pool-usage-type-create" routerLinkActive="active" class="link-dark rounded">Havuz Kullanım Tipi Ekle</a></li>
+            <li><a routerLink="pool-usage-type-update-list" routerLinkActive="active" class="link-dark rounded">Havuz Kullanım Tipi Düzenle</a></li>
+            <li><a routerLink="pool-usage-type-delete" routerLinkActive="active" class="link-dark rounded">Havuz Kullanım Tipi Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#address-collapse" aria-expanded="false">
+          Adres İşlemleri
+        </button>
+        <div class="collapse" id="address-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="address-list" routerLinkActive="active" class="link-dark rounded">Adres Listele</a></li>
+            <li><a routerLink="address-create" routerLinkActive="active" class="link-dark rounded">Adres Ekle</a></li>
+            <li><a routerLink="address-update-list" routerLinkActive="active" class="link-dark rounded">Adres Düzenle</a></li>
+            <li><a routerLink="address-delete" routerLinkActive="active" class="link-dark rounded">Adres Sil</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#maintenance-plan-collapse" aria-expanded="false">
+          Bakım Planı İşlemleri
+        </button>
+        <div class="collapse" id="maintenance-plan-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="maintenance-plan-list" routerLinkActive="active" class="link-dark rounded">Bakım Planı Listele</a></li>
+            <li><a routerLink="maintenance-plan-create" routerLinkActive="active" class="link-dark rounded">Bakım Planı Ekle</a></li>
+            <li><a routerLink="maintenance-plan-update-list" routerLinkActive="active" class="link-dark rounded">Bakım Planı Düzenle</a></li>
+            <li><a routerLink="maintenance-plan-delete" routerLinkActive="active" class="link-dark rounded">Bakım Planı Sil</a></li>
+            <li><a routerLink="maintenance-plan-add-remove-main-op-list" routerLinkActive="active" class="link-dark rounded">Bakım Operasyonu Ekle-Çıkar</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#maintenance-operation-collapse" aria-expanded="false">
+          Bakım Operasyonu İşlemleri
+        </button>
+        <div class="collapse" id="maintenance-operation-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a routerLink="maintenance-operation-list" routerLinkActive="active" class="link-dark rounded">Bakım Operasyonu Listele</a></li>
+            <li><a routerLink="maintenance-operation-create" routerLinkActive="active" class="link-dark rounded">Bakım Operasyonu Ekle</a></li>
+            <li><a routerLink="maintenance-operation-update-list" routerLinkActive="active" class="link-dark rounded">Bakım Operasyonu Düzenle</a></li>
+            <li><a routerLink="maintenance-operation-delete" routerLinkActive="active" class="link-dark rounded">Bakım Operasyonu Sil</a></li>
+          </ul>
+        </div>
+      </li>
+       
+    </ul>
+  </div>

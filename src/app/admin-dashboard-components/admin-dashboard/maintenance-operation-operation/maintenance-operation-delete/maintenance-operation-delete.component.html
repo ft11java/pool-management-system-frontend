@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="text-center mt-5">Bakım Operasyonu Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Operasyon Adı</th>            
+            <th>Hangi Sıklıkla Yapılır</th>
+            <th>Birim Fiyatı</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maintenanceOperation of maintenanceOperations">
+                <td>{{maintenanceOperation.operationName}}</td>
+                <td>{{maintenanceOperation.whatFrequency}}</td>
+                <td>{{maintenanceOperation.unitPrice}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="maintenanceOperationDelete(maintenanceOperation.id)" class="btn btn-danger" style="margin-left: 10px;">Sil</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

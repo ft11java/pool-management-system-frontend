@@ -1,0 +1,38 @@
+.dark-bg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../../../assets/img/hero-pool.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+.generic{
+    padding: 100px;
+}
+
+#exampleModal{
+    padding: 0px;
+}
+
+#maintenanceOperationCard{
+    font-size: 14px;
+
+}
+
+@media (max-width: 440px) { 
+  
+    #maintenanceOperationCard{
+        font-size: 9px;
+        
+    }
+
+    #poolCard{
+        font-size: 12px;
+    }
+
+    .container{
+        padding:0px;
+    }
+
+   
+    
+ }

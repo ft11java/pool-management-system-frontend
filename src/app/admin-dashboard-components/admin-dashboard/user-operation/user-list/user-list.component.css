@@ -1,0 +1,44 @@
+#poolIcon{
+    font-size: 1.5rem;
+}
+
+#generic {
+    padding: 5px;
+  }
+
+  #button{
+      min-width: 100px;
+  }
+
+  #search:focus{
+    box-shadow: 0 0 5px rgb(245, 80, 80);
+    border: 1px solid rgb(253, 116, 116);
+  }
+
+  #userListCardBody{
+    max-height: 550px ;
+     overflow-y: scroll;
+   }
+ 
+@media (max-width: 440px) {
+  #userListCard {
+    font-size: 10px;
+  }
+
+  #table{
+    max-width: 175px;
+}
+
+  #generic {
+    padding: 5px;
+  }
+
+  #button{
+    min-width: 40px;
+      font-size: 6px;
+  }
+
+  #poolIcon{
+      font-size: 1.3rem;
+  }
+}

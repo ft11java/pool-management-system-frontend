@@ -1,0 +1,38 @@
+<div class="container text-center mt-5">
+    <div class="text text-start">
+        <div class="text-primary"><h5>Bakım Planı Detay</h5></div>
+        <div>
+            <label class="mt-3"> <b>Bakım Planı Tarihi:</b></label>{{maintenancePlan.operationMade}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Bir Sonraki Bakım Planı Tarihi:</b></label>{{maintenancePlan.nextMaintenanceDate}}
+        </div>
+        <div>
+            <br>
+           <h5>Bakım Oparasyonları</h5>
+        </div>
+        <div *ngFor="let maintenanceOperation of maintenancePlan.maintenanceOperation" >
+            <label  class="mt-3"> <b>Bakım Operasyonu Adı:</b></label>{{maintenanceOperation.operationName}}
+            <label  class="mt-3"> <b>Hangi Sıklıkla Yapılır:</b></label>{{maintenanceOperation.whatFrequency}}
+            <label  class="mt-3"> <b>Birim Fiyatı:</b></label>{{maintenanceOperation.unitPrice}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Bakım Planı Fatura Tutarı:</b></label>{{maintenancePlan.invoicePrice}}
+        </div>
+        <div>
+            <br>
+           <h5>Havuz Bilgileri</h5>
+        </div>
+        <div>
+            <label class="mt-3"> <b>Havuz Numarası:</b></label>{{maintenancePlan?.pool?.poolNumber}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Havuz Adı:</b></label>{{maintenancePlan?.pool?.poolName}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Havuz Kapasitesi:</b></label>{{maintenancePlan?.pool?.capacity}}
+        </div>
+       
+    </div>
+</div>
+

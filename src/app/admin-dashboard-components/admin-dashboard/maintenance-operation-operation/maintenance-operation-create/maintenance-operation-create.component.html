@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 mt-5">
+    <h5 class="text-center">Bakım Operasyonu Ekle</h5>
+    <form [formGroup]="maintenanceOperationCreateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="operationName" class="form-control" placeholder="Operasyon Adı" type="text" formControlName="operationName">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name=" whatFrequency" class="form-control" placeholder="Hangi Sıklıkla Yapılmalı" type="text" formControlName="whatFrequency">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="unitPrice" class="form-control" placeholder="Birim Fiyatı" type="text" formControlName="unitPrice">
+        </div>
+       
+        <div class="form-group text-end">
+            <button type="submit" class="btn btn-warning btn-block mt-3 ">Kaydet</button>
+        </div>
+    </form>
+    
+</div>
+</div>
+</div>
+

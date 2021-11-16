@@ -1,0 +1,127 @@
+<div class="container generic mt-2 " id="poolAddUserAllCard">
+    <div class="row">
+        <div class="col-12 col-sm-8">
+            <div class="card border-primary shadow bg-body rounded">
+                <div class="card-header  bg-primary border-primary">
+                    <div class="row g-0">
+                        <div class="col-8 d-flex align-items-center">
+                            <h5 class="text-white fs-6">Havuza Bilgileri </h5>
+                        </div>
+                        <div class="col-4 text-end p-0 m-0 ">
+                            <span> <i class="bi bi-info-circle" style="color: rgb(255, 255, 255);" id="poolIcon"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-5 col-sm-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-primary ">Numarası :</li>
+                                <li class="list-group-item text-primary ">Adı :</li>
+
+                            </ul>
+                        </div>
+                        <div class="col-5 col-sm-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item text-danger">{{poolNumber}}</li>
+                                <li class="list-group-item text-danger">{{poolName}}</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-12 col-sm-8">
+            <div class="card border-primary shadow bg-body rounded">
+                <div class="card-header  bg-primary border-primary">
+                    <div class="row g-0">
+                        <div class="col-5 col-sm-8 d-flex align-items-center">
+                            <span> <i class="bi bi-card-list" style="color:  rgb(255, 255, 255);"
+                                    id="poolIcon"></i></span>
+                            <span class="text-white fw-bold">&nbsp;Havuz Listesi </span>
+                        </div>
+                        <div class="col-1 col-sm-1 text-end">
+                            <span> <i class="bi bi-search m-1" style="color:  rgb(255, 255, 255);" id="poolIcon"></i></span>
+                        </div>
+                        <div class="col-6 col-sm-3 ">
+                            <input id="search" class="form-control form-control-sm text-danger mt-1" #searchText
+                                (keyup)="search(searchText.value)" type="text" placeholder="Havuz Ara (Numarası, Adı)"
+                                aria-label="default input example">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="userCardBody">
+
+                    <table class="table table-striped">
+                        <thead class="text-danger">
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                        </thead>
+                        <tbody>
+                            <ng-template ngFor let-user [ngForOf]="filterPoolUsers">
+                                <tr class="text-primary">
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.lastName}}</td>
+                                    <td>
+                                        <div class="container-fluid text-end">
+                                            <button (click)="poolRemoveUser(user.id)" class="btn btn-danger btn-sm"
+                                                style="margin-left: 10px;">Çıkar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2 mb-5">
+        <div class="col-12 col-sm-8">
+            <div class="card border-primary shadow bg-body rounded">
+                <div class="card-header  bg-primary border-primary">
+                    <div class="row g-0">
+                        <div class="col-5 col-sm-8 d-flex align-items-center">
+                            <span> <i class="bi bi-card-list" style="color:  rgb(255, 255, 255);"
+                                    id="poolIcon"></i></span>
+                            <span class="text-white fw-bold">&nbsp;Havuz Listesi </span>
+                        </div>
+                        <div class="col-1 col-sm-1 text-end">
+                            <span> <i class="bi bi-search m-1" style="color:  rgb(255, 255, 255);" id="poolIcon"></i></span>
+                        </div>
+                        <div class="col-6 col-sm-3 ">
+                            <input id="search" class="form-control form-control-sm text-danger mt-1" #searchText1
+                                (keyup)="search1(searchText1.value)" type="text" placeholder="Havuz Ara (Numarası, Adı)"
+                                aria-label="default input example">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="userCardBody">
+                    <table class="table table-striped">
+                        <thead class="text-danger">
+                            <th>Adı</th>
+                            <th>Soyadı</th>
+                        </thead>
+                        <tbody>
+                            <tr class="text-primary" *ngFor="let user of filterUsers">
+                                <td>{{user.name}}</td>
+                                <td>{{user.lastName}}</td>
+                                <td>
+                                    <div class="container-fluid text-end">
+                                        <button (click)="poolAddUser(user.id)" class="btn btn-success btn-sm"
+                                            style="margin-left: 10px;">Ekle</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

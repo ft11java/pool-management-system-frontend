@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 mt-5">
+    <h5 class="text-center">Bakım Planı Güncelle</h5>
+    <form [formGroup]="maintenancePlanUpdateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="userName" class="form-control" placeholder="Bakım Planı Tarihi" type="text" [(ngModel)]="maintenancePlan.operationMade" formControlName="operationMade">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="email" class="form-control" placeholder="Bir Sonraki Bakım Planı Tarihi" type="text" [(ngModel)]="maintenancePlan.nextMaintenanceDate" formControlName="nextMaintenanceDate">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="password" class="form-control" placeholder="Fatura Tutarı" type="text" [(ngModel)]="maintenancePlan.invoicePrice" formControlName="invoicePrice">
+        </div>
+       
+         
+
+        <div class="form-group text-end">
+            <button type="submit" class="btn btn-warning btn-block mt-3 ">Güncelle</button>
+        </div>
+    </form>
+    
+</div>
+</div>
+</div>
+

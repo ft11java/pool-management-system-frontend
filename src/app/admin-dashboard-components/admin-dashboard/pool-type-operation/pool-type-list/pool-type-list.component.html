@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-center mt-5">Havuz Tipi Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Havuz Tipi Adı</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let poolType of poolTypes">
+                <td>{{poolType.poolTypeName}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="poolTypeDetails(poolType.id)" class="btn btn-success" style="margin-left: 10px;">Göster</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

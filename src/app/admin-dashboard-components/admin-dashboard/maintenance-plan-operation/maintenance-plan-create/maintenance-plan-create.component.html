@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 mt-5">
+    <h5 class="text-center">Bakım Planı Ekle</h5>
+    <form [formGroup]="maintenancePlanCreateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="userName" class="form-control" placeholder="Bakım Planı Tarihi" type="text" formControlName="operationMade">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="email" class="form-control" placeholder="Bir Sonraki Bakım Planı Tarihi" type="text" formControlName="nextMaintenanceDate">
+        </div>
+        <div class="form-group input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="bi bi-arrow-bar-right"></i></span>
+            </div>
+            <input name="password" class="form-control" placeholder="Fatura Tutarı" type="text" formControlName="invoicePrice">
+        </div>
+       
+          <select class="form-select mt-3" aria-label="Default select example" formControlName="poolId">
+            <option value="" disabled>Ait Olduğu Havuz</option>
+            <option  *ngFor="let pool of pools" value={{pool.id}}>{{pool.poolNumber}}-{{pool.poolName}}</option>
+          </select>
+
+        <div class="form-group text-end">
+            <button type="submit" class="btn btn-warning btn-block mt-3 ">Kaydet</button>
+        </div>
+    </form>
+    
+</div>
+</div>
+</div>
+

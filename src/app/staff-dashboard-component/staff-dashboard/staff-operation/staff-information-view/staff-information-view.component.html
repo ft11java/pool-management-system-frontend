@@ -1,0 +1,38 @@
+<div class="container text-center mt-5">
+    <div class="text text-start">
+        <div class="text-primary"><h5>Çalışan Detay</h5></div>
+        <div>
+            <label class="mt-3"> <b>Kullanıcı Adı:</b></label>{{user.userName}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Email:</b></label>{{user.email}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Adı:</b></label>{{user.name}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Soyadı:</b></label>{{user.lastName}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Telefon Numarası:</b></label>{{user.phoneNumber}}
+        </div>
+        <div>
+            <label class="mt-3"> <b>Kullanıcı Tipi:</b></label>{{user?.userTitles?.userTitleName}}
+        </div>
+        
+        <div>
+            <label class="mt-3"> <b>Kullanıcı Rolü:</b></label>{{user?.roles?.role}}
+        </div>
+        <div>
+            <br>
+           <h5>Sorumlu Olduğu Havuzlar</h5>
+        </div>
+        <div *ngFor="let pool of user.poolInUserViewUserDTO" >
+            <label  class="mt-3"> <b>Sorumlu Olduğu Havuz No:</b></label>{{pool.poolNumber}}
+            <label  class="mt-3"> <b>Sorumlu Olduğu Havuz Adı:</b></label>{{pool.poolName}}
+        </div>
+    </div>
+</div>
+
+
+

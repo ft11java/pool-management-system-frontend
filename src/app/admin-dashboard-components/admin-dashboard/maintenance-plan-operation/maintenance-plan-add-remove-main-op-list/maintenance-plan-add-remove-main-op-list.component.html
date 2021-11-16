@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="text-center mt-5">Bakım Planı Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Havuz Numarası</th>            
+            <th>Havuz Adı</th>
+            <th>Bakım Planı Tarihi</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let maintenancePlan of maintenancePlans">
+                <td>{{maintenancePlan?.pool?.poolNumber}}</td>
+                <td>{{maintenancePlan?.pool?.poolName}}</td>
+                <td>{{maintenancePlan.operationMade}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="maintenancePlanAddRemoveMaintenanceOperation(maintenancePlan.id)" class="btn btn-success" style="margin-left: 10px;">Bakım Operasyonu Ekle-Çıkar</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

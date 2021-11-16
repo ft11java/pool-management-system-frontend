@@ -1,0 +1,11 @@
+{
+    "/allvisitorview/*":{
+        "target":"http://localhost:8081/api/v1/viewall/pool",
+        "secure":false,
+        "logLevel":"debug",
+        "changeOrigin":true,
+        "pathRewrite":{
+            "^/allvisitorview":""
+        }
+    }
+}

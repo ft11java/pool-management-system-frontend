@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="text-center mt-5">Adres Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Adres</th>            
+            <th>İlçe</th>
+            <th>İl</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let address of addresses">
+                <td>{{address.address}}</td>
+                <td>{{address.district}}</td>
+                <td>{{address.city}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="addressDelete(address.id)"  class="btn btn-danger" style="margin-left: 10px;">Sil</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

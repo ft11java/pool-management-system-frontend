@@ -1,0 +1,85 @@
+<div class="container mt-3">
+    <div class="container row-12">
+        <div class="card col-8 ">
+            <div class="card-header">
+              <span class="text-primary fs-4"> Bakım Planı Bilgileri</span>
+            </div>
+            <div class="card-body row-12 d-flex justify-content-evenly">
+                <ul class="list-group list-group-flush col-5">
+                    <li class="list-group-item text-primary text-start">Havuz Numarası  :</li>
+                    <li class="list-group-item text-primary text-start">Havuz Adı       :</li>
+                    <li class="list-group-item text-primary text-start">Bakım Planı Tarihi:</li>
+                    
+                  </ul>
+               
+                  <ul class="list-group list-group-flush col-5">
+                    <li class="list-group-item text-danger">{{maintenancePlan?.pool?.poolNumber}}</li>
+                    <li class="list-group-item text-danger">{{maintenancePlan?.pool?.poolName}}</li>
+                    <li class="list-group-item text-danger">{{maintenancePlan.operationMade}}</li>
+                    
+                  </ul>
+            </div>
+          </div>
+    </div>
+    <div class="container row-12 mt-3">
+        <div class="card col-10 ">
+            <div class="card-header">
+              <span class="text-primary fs-4"> Bakım Planının Kayıtlı Bakım Operasyonları</span>
+            </div>
+            <div class="card-body  d-flex justify-content-evenly">
+                <table class="table table-striped">
+                    <thead class="text-danger">                                
+                        <th>Operasyon Adı</th>
+                        <th>Uygulanma Aralığı</th>
+                        <th>Birim Fiyatı</th>
+                    </thead>
+                    <tbody>
+                        <ng-template ngFor let-maintenanceOperation [ngForOf]="maintenancePlan.maintenanceOperation">
+                        <tr class="text-primary" >
+                            <td>{{maintenanceOperation.operationName}}</td>
+                            <td>{{maintenanceOperation.whatFrequency}}</td>
+                            <td>{{maintenanceOperation.unitPrice}}</td>
+                            <td>
+                                <div class="container-fluid text-end">
+                                <button (click)="maintenancePlanRemoveMaintenanceOperation(maintenanceOperation.id)" class="btn btn-danger" style="margin-left: 10px;">Çıkar</button>
+                            </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+    <div class="container row-12 mt-3">
+        <div class="card col-10 ">
+            <div class="card-header">
+              <span class="text-primary fs-4">Bakım Operasyonları</span>
+            </div>
+            <div class="card-body  d-flex justify-content-evenly  ">
+                <table class="table table-striped">
+                    <thead class="text-danger">                                
+                        <th>Operasyon Adı</th>
+                        <th>Uygulanma Aralığı</th>
+                        <th>Birim Fiyatı</th>
+                    </thead>
+                    <tbody>
+                        <ng-template ngFor let-maintenanceOperation [ngForOf]="maintenanceOperations">
+                            <tr class="text-primary" >
+                                <td>{{maintenanceOperation.operationName}}</td>
+                                <td>{{maintenanceOperation.whatFrequency}}</td>
+                                <td>{{maintenanceOperation.unitPrice}}</td>
+                                <td>
+                                    <div class="container-fluid text-end">
+                                    <button (click)="maintenancePlanAddMaintenanceOperation(maintenanceOperation.id)" class="btn btn-success" style="margin-left: 10px;">Ekle</button>
+                                </div>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    
+                    </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+</div>

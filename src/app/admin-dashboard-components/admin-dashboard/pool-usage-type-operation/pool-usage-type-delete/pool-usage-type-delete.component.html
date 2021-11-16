@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-center">Havuz Kullanım Tipi Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Havuz Kullanım Tipi Adı</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let poolUsageType of poolUsageTypes">
+                <td>{{poolUsageType.poolUsageTypeName}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="poolUsageTypeDelete(poolUsageType.id)" class="btn btn-danger" style="margin-left: 10px;">Sil</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

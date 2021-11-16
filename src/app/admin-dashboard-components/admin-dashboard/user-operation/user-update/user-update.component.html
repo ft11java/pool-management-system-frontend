@@ -1,0 +1,284 @@
+<div class="container-fluid mt-3" id="generic">
+    <div class="card border-primary shadow bg-body rounded" id="poolCreateCard">
+        <div class="card-header  bg-primary border-primary">
+            <div class="row g-0">
+                <div class="col-8 d-flex align-items-center">
+                    <h5 class="text-white fs-6">Kullanıcı Güncelle </h5>
+                </div>
+                <div class="col-4 text-end p-0 m-0 ">
+                    <span> <i class="bi bi-plus-circle" style="color: rgb(255, 255, 255);" id="poolIcon"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div>
+                <h6 class="text-success">Genel Bilgileri Giriniz</h6>
+            </div>
+            <form [formGroup]="userUpdateForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input name="userName" class="form-control text-success" placeholder="Kullanıcı Adı" [(ngModel)]="user.userName"
+                                type="text" formControlName="userName" id="userName">
+                            <label for="userName" class="text-primary fst-italic">Kullanıcı Adı</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userUpdateForm.controls.userName.errors && (userUpdateForm.controls.userName.dirty || userUpdateForm.controls.userName.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userUpdateForm.controls.userName.errors.required">* Havuz numarası
+                                        giriniz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input name="email" class="form-control text-success" placeholder="Email" type="text" [(ngModel)]="user.email"
+                                formControlName="email" id="email">
+                            <label for="email" class="text-primary fst-italic">Email</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userUpdateForm.controls.email.errors && (userUpdateForm.controls.email.dirty || userUpdateForm.controls.email.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userUpdateForm.controls.email.errors.required">* Email giriniz</span>
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userUpdateForm.controls.email.errors.email">* Email formatında giriş
+                                        yapınız</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <input name="name" class="form-control text-success" placeholder="Ad" type="text" [(ngModel)]="user.name"
+                                formControlName="name" id="name">
+                            <label for="name" class="text-primary fst-italic">İsim</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userUpdateForm.controls.name.errors && (userUpdateForm.controls.name.dirty || userUpdateForm.controls.name.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userUpdateForm.controls.name.errors.required">* İsim giriniz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <input name="lastName" class="form-control text-success" placeholder="Soyad" type="text" [(ngModel)]="user.lastName"
+                                formControlName="lastName" id="lastName">
+                            <label for="lastName" class="text-primary fst-italic">Soyisim</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userUpdateForm.controls.lastName.errors && (userUpdateForm.controls.lastName.dirty || userUpdateForm.controls.lastName.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userUpdateForm.controls.lastName.errors.required">* Soyisim
+                                        giriniz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">                        
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="password" class="form-control text-success" placeholder="Şifre" type="text"
+                                    formControlName="password" id="password">
+                                <label for="password" class="text-primary fst-italic">Şifre</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.password.errors && (userUpdateForm.controls.password.dirty || userUpdateForm.controls.password.touched)">
+                                        <span class="text-danger fst-italic ms-2  align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.password.errors.required">* Şifre giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="phoneNumber" class="form-control text-success" placeholder="Telefon" [(ngModel)]="user.phoneNumber"
+                                    type="text" formControlName="phoneNumber" id="phoneNumber">
+                                <label for="phoneNumber" class="text-primary fst-italic">Telefon</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.phoneNumber.errors && (userUpdateForm.controls.phoneNumber.dirty || userUpdateForm.controls.name.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.phoneNumber.errors.required">* Telefon
+                                            giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-1">
+                            <span class="text-secondary fst-italic fw-bold" id="validation1">**Mevcut değer:  <span class="text-info">{{user?.userTitles?.userTitleName}}</span></span>
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="userTitlesId" [(ngModel)]="userTypeId"
+                                    aria-label="Floating label select example" formControlName="userTitlesId">
+                                    <option  disabled class="text-success fst-italic fw-bold" value="">Kullanıcı Tipini
+                                        Seçiniz
+                                    </option>
+                                    <ng-template ngFor let-userType [ngForOf]="userTypes">
+                                    <option  [value]="userType.id" >
+                                        {{userType.userTitleName}}</option>
+                                    </ng-template>
+                                </select>
+                                <label for="poolUsageType" class="text-primary fst-italic">Kullanıcı Tipini
+                                    Seçiniz</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.userTitlesId.errors && (userUpdateForm.controls.userTitlesId.dirty || userUpdateForm.controls.userTitlesId.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.userTitlesId.errors.required">*Kullanıcı tipini seçiniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-1">
+                            <span class="text-secondary fst-italic fw-bold" id="validation1">**Mevcut değer:  <span class="text-info">{{user?.roles?.role}}</span></span>
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="role" [(ngModel)]="roleId"
+                                    aria-label="Floating label select example" formControlName="roleId">
+                                    <option disabled class="text-success fst-italic fw-bold">Kullanıcı Rolünü
+                                        Seçiniz</option>
+                                         <ng-template ngFor let-role [ngForOf]="roles">
+                                    <option  value={{role.id}}>
+                                        {{role.role}}</option>
+                                    </ng-template>
+                                </select>
+                                <label for="poolType" class="text-primary fst-italic">Kullanıcı Rolünü Seçiniz</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.roleId.errors && (userUpdateForm.controls.roleId.dirty || userUpdateForm.controls.roleId.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.roleId.errors.required">* Kullanıcı rolünü
+                                            seçiniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="text-success mt-3">Hesap Bilgilerini Giriniz</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="user.accountNonExpired" id="validation1">**Mevcut değer:  <span class="text-info">Evet</span></span>
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="!user.accountNonExpired" id="validation1">**Mevcut değer:  <span class="text-info">Hayır</span></span>
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="accountNonExpired" [(ngModel)]="accountNonExpired"
+                                    aria-label="Floating label select example" formControlName="accountNonExpired">
+                                    <option disabled class="text-success fst-italic fw-bold">Hesap Süresi
+                                        Dolmamış</option>
+                                    <option value="true">Evet</option>
+                                    <option  value="false">Hayır</option>
+                                </select>
+                                <label for="accountNonExpired" class="text-primary fst-italic">Hesap Süresi Dolmamış
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.accountNonExpired.errors && (userUpdateForm.controls.accountNonExpired.dirty || userUpdateForm.controls.accountNonExpired.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.accountNonExpired.errors.required">* Hesap
+                                            süresi durumu seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="user.accountNonLocked" id="validation1">**Mevcut değer:  <span class="text-info">Evet</span></span>
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="!user.accountNonLocked" id="validation1">**Mevcut değer:  <span class="text-info">Hayır</span></span>
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="accountNonLocked" [(ngModel)]="accountNonLocked"
+                                    aria-label="Floating label select example" formControlName="accountNonLocked">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Kilitsiz
+                                        </option>
+                                    <option value="true">Evet</option>
+                                    <option value="false">Hayır</option>
+                                </select>
+                                <label for="accountNonLocked" class="text-primary fst-italic">Hesap Kilitsiz
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.accountNonLocked.errors && (userUpdateForm.controls.accountNonLocked.dirty || userUpdateForm.controls.accountNonLocked.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.accountNonLocked.errors.required">* Hesap kilit durumu
+                                             seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="user.credentialsNonExpired" id="validation1">**Mevcut değer:  <span class="text-info">Evet</span></span>
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="!user.credentialsNonExpired" id="validation1">**Mevcut değer:  <span class="text-info">Hayır</span></span>
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="credentialsNonExpired" [(ngModel)]="credentialsNonExpired"
+                                    aria-label="Floating label select example" formControlName="credentialsNonExpired">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Süresi
+                                        Dolmamış</option>
+                                    <option  value="true">Evet</option>
+                                    <option  value="false">Hayır</option>
+                                </select>
+                                <label for="credentialsNonExpired" class="text-primary fst-italic">Hesap Süresi Dolmamış
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.credentialsNonExpired.errors && (userUpdateForm.controls.credentialsNonExpired.dirty || userUpdateForm.controls.credentialsNonExpired.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.credentialsNonExpired.errors.required">* Hesap
+                                            süresi durumu seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="user.enabled" id="validation1">**Mevcut değer:  <span class="text-info">Evet</span></span>
+                            <span class="text-secondary fst-italic fw-bold" *ngIf="!user.enabled" id="validation1">**Mevcut değer:  <span class="text-info">Hayır</span></span>
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="enabled" [(ngModel)]="enabled"
+                                    aria-label="Floating label select example" formControlName="enabled">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Aktif
+                                        </option>
+                                    <option  value="true">Evet</option>
+                                    <option  value="false">Hayır</option>
+                                </select>
+                                <label for="enabled" class="text-primary fst-italic">Hesap Aktif
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userUpdateForm.controls.enabled.errors && (userUpdateForm.controls.enabled.dirty || userUpdateForm.controls.enabled.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userUpdateForm.controls.enabled.errors.required">* Hesap aktif durumunu
+                                             seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0 mt-2">
+                        <div class="col-6 col-sm-3">
+                          
+                        </div>
+                        <div class="col-2 col-sm-6">                 
+                        </div>
+                        <div class="col-4 col-sm-3">
+                            <div class="form-group d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-block fw-bold" [disabled]="!userUpdateForm.valid">Güncelle</button>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,275 @@
+<div class="container-fluid mt-3" id="generic">
+    <div class="card border-primary shadow bg-body rounded" id="poolCreateCard">
+        <div class="card-header  bg-primary border-primary">
+            <div class="row g-0">
+                <div class="col-8 d-flex align-items-center">
+                    <h5 class="text-white fs-6">Kullanıcı Ekle </h5>
+                </div>
+                <div class="col-4 text-end p-0 m-0 ">
+                    <span> <i class="bi bi-plus-circle" style="color: rgb(255, 255, 255);" id="poolIcon"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div>
+                <h6 class="text-success">Genel Bilgileri Giriniz</h6>
+            </div>
+            <form [formGroup]="userCreateForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input name="userName" class="form-control text-success" placeholder="Kullanıcı Adı"
+                                type="text" formControlName="userName" id="userName">
+                            <label for="userName" class="text-primary fst-italic">Kullanıcı Adı</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userCreateForm.controls.userName.errors && (userCreateForm.controls.userName.dirty || userCreateForm.controls.userName.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userCreateForm.controls.userName.errors.required">* Havuz numarası
+                                        giriniz</span>
+                                <span class="text-danger fst-italic ms-2 align-top"  id="validation" *ngIf="userCreateForm.controls.userName.errors.minlength">** Kullanıcı adı en az 4 karakter olmalı</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="form-floating">
+                            <input name="email" class="form-control text-success" placeholder="Email" type="text"
+                                formControlName="email" id="email">
+                            <label for="email" class="text-primary fst-italic">Email</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userCreateForm.controls.email.errors && (userCreateForm.controls.email.dirty || userCreateForm.controls.email.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userCreateForm.controls.email.errors.required">* Email giriniz</span>
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userCreateForm.controls.email.errors.email">* Email formatında giriş
+                                        yapınız</span>
+                                         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <input name="name" class="form-control text-success" placeholder="Ad" type="text"
+                                formControlName="name" id="name">
+                            <label for="name" class="text-primary fst-italic">İsim</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userCreateForm.controls.name.errors && (userCreateForm.controls.name.dirty || userCreateForm.controls.name.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userCreateForm.controls.name.errors.required">* İsim giriniz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mt-2">
+                        <div class="form-floating">
+                            <input name="lastName" class="form-control text-success" placeholder="Soyad" type="text"
+                                formControlName="lastName" id="lastName">
+                            <label for="lastName" class="text-primary fst-italic">Soyisim</label>
+                            <div style="height: 20px;">
+                                <div
+                                    *ngIf="userCreateForm.controls.lastName.errors && (userCreateForm.controls.lastName.dirty || userCreateForm.controls.lastName.touched)">
+                                    <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                        *ngIf="userCreateForm.controls.lastName.errors.required">* Soyisim
+                                        giriniz</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">                        
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="password" class="form-control text-success" placeholder="Şifre" type="text"
+                                    formControlName="password" id="password">
+                                <label for="password" class="text-primary fst-italic">Şifre</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.password.errors && (userCreateForm.controls.password.dirty || userCreateForm.controls.password.touched)">
+                                        <span class="text-danger fst-italic ms-2  align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.password.errors.required">* Şifre giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <input name="phoneNumber" class="form-control text-success" placeholder="Telefon"
+                                    type="text" formControlName="phoneNumber" id="phoneNumber">
+                                <label for="phoneNumber" class="text-primary fst-italic">Telefon</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.phoneNumber.errors && (userCreateForm.controls.phoneNumber.dirty || userCreateForm.controls.phoneNumber.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.phoneNumber.errors.required">* Telefon
+                                            giriniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="poolUsageType"
+                                    aria-label="Floating label select example" formControlName="userTitlesId">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Kullanıcı Tipini
+                                        Seçiniz
+                                    </option>
+                                    <option *ngFor="let userType of userTypes" value={{userType.id}}>
+                                        {{userType.userTitleName}}</option>
+                                </select>
+                                <label for="poolUsageType" class="text-primary fst-italic">Kullanıcı Tipini
+                                    Seçiniz</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.userTitlesId.errors && (userCreateForm.controls.userTitlesId.dirty || userCreateForm.controls.userTitlesId.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.userTitlesId.errors.required">* Havuz
+                                            kullanım tipini seçiniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="role"
+                                    aria-label="Floating label select example" formControlName="roleId">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Kullanıcı Rolünü
+                                        Seçiniz</option>
+                                    <option *ngFor="let role of roles" value={{role.id}}>
+                                        {{role.role}}</option>
+                                </select>
+                                <label for="poolType" class="text-primary fst-italic">Kullanıcı Rolünü Seçiniz</label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.roleId.errors && (userCreateForm.controls.roleId.dirty || userCreateForm.controls.roleId.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.roleId.errors.required">* Havuz tipini
+                                            seçiniz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h6 class="text-success mt-3">Hesap Bilgilerini Giriniz</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="accountNonExpired"
+                                    aria-label="Floating label select example" formControlName="accountNonExpired">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Süresi
+                                        Dolmamış</option>
+                                    <option value="true">Evet</option>
+                                    <option value="false">Hayır</option>
+                                </select>
+                                <label for="accountNonExpired" class="text-primary fst-italic">Hesap Süresi Dolmamış
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.accountNonExpired.errors && (userCreateForm.controls.accountNonExpired.dirty || userCreateForm.controls.accountNonExpired.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.accountNonExpired.errors.required">* Hesap
+                                            süresi durumu seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="accountNonLocked"
+                                    aria-label="Floating label select example" formControlName="accountNonLocked">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Kilitsiz
+                                        </option>
+                                    <option value="true">Evet</option>
+                                    <option value="false">Hayır</option>
+                                </select>
+                                <label for="accountNonLocked" class="text-primary fst-italic">Hesap Kilitsiz
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.accountNonLocked.errors && (userCreateForm.controls.accountNonLocked.dirty || userCreateForm.controls.accountNonLocked.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.accountNonLocked.errors.required">* Hesap kilit durumu
+                                             seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="credentialsNonExpired"
+                                    aria-label="Floating label select example" formControlName="credentialsNonExpired">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Süresi
+                                        Dolmamış</option>
+                                    <option value="true">Evet</option>
+                                    <option value="false">Hayır</option>
+                                </select>
+                                <label for="credentialsNonExpired" class="text-primary fst-italic">Hesap Süresi Dolmamış
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.credentialsNonExpired.errors && (userCreateForm.controls.credentialsNonExpired.dirty || userCreateForm.controls.credentialsNonExpired.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.credentialsNonExpired.errors.required">* Hesap
+                                            süresi durumu seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 mt-2">
+                            <div class="form-floating">
+                                <select class="form-select text-success" id="enabled"
+                                    aria-label="Floating label select example" formControlName="enabled">
+                                    <option selected disabled class="text-success fst-italic fw-bold">Hesap Kilitsiz
+                                        </option>
+                                    <option value="true">Evet</option>
+                                    <option value="false">Hayır</option>
+                                </select>
+                                <label for="enabled" class="text-primary fst-italic">Hesap Kilitsiz
+                                </label>
+                                <div style="height: 20px;">
+                                    <div
+                                        *ngIf="userCreateForm.controls.enabled.errors && (userCreateForm.controls.enabled.dirty || userCreateForm.controls.enabled.touched)">
+                                        <span class="text-danger fst-italic ms-2 align-top" id="validation"
+                                            *ngIf="userCreateForm.controls.enabled.errors.required">* Hesap kilit durumu
+                                             seçiniz</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0 mt-2">
+                        <div class="col-6 col-sm-3">
+                            <div class="d-grid gap-2">
+                                <button type="button" (click)="reset()" class="btn btn-danger btn-block "
+                                    id="resettButton">Formu Temizle</button>
+                            </div>
+                        </div>
+                        <div class="col-2 col-sm-6">
+                        </div>
+                        <div class="col-4 col-sm-3">
+                            <div class="form-group d-grid gap-2">
+                                <button type="submit" class="btn btn-warning btn-block fw-bold"
+                                    [disabled]="!userCreateForm.valid">Kaydet</button>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>

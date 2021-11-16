@@ -1,0 +1,45 @@
+#userCard{
+    margin: auto;
+    border-color: rgb(15, 224, 43);
+}
+
+#userIcon{
+    font-size: 1.5rem;
+}
+
+
+
+@media (max-width: 440px) { 
+    #poolCard{
+        font-size: 12px;
+        
+    }
+    
+
+    #addressCard{
+        font-size: 12px;
+    }
+
+    #userCard{
+        font-size: 12px;
+    }
+    
+    #userIcon{
+        font-size: 1rem;
+    }
+
+    #maintenancePlanCard{
+        font-size: 10px;
+    }
+    #maintenanceOperationCard{
+        font-size: 9px;
+        
+    }
+
+    .container{
+        padding:5px;
+    }
+
+   
+    
+ }

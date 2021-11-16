@@ -1,0 +1,31 @@
+#userCardBody{
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#poolIcon{
+    font-size: 1.5rem;
+}
+
+
+ #search:focus{
+   box-shadow: 0 0 5px rgb(245, 80, 80);
+   border: 1px solid rgb(253, 116, 116);
+ }
+
+@media (max-width: 440px) {
+  #poolAddUserAllCard {
+    font-size: 12px;
+  }
+
+  #generic {
+    padding: 5px;
+  }
+
+  #poolIcon{
+      font-size: 1.3rem;
+  }
+  #search{
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-around">
+    <div class="card  text-center border-primary bg-light  " style="width: 25rem;">
+      <div class="card-header  mt-2 mb-2 border-info bg-transparent text-primary   ">
+        <h5> Giriş Paneli</h5>
+      </div>
+      <div class="card-body  text-primary border-primary">
+        
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <div class="row">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                  formControlName="userName">
+                <label for="floatingInput">Kullanıcı Adı</label>
+
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="form-floating ">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                  formControlName="password">
+                <label for="floatingPassword">Şifre</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-floating d-grid gap-2">
+                <button type="submit" class="btn btn-primary mb-3">Giriş</button>
+              </div>
+            </div>
+          </form>
+        
+      </div>
+      
+    </div>
+  </div>
+  </div>
+  </div>
+</div>

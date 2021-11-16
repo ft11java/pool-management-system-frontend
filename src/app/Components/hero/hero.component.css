@@ -1,0 +1,11 @@
+.dark-bg{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),url('../../../assets/img/hero-pool.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+.container-hero{
+height: 60vh;
+
+}

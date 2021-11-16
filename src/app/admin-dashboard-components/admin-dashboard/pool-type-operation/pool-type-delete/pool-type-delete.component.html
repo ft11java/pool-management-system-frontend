@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-center">Havuz Tipi Listesi</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Havuz Tipi Adı</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let poolType of poolTypes">
+                <td>{{poolType.poolTypeName}}</td>
+                <td>
+                    <div class="container-fluid text-end">
+                    <button (click)="poolTypeDelete(poolType.id)" class="btn btn-danger" style="margin-left: 10px;">Sil</button>
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
